@@ -56,7 +56,7 @@ export default {
       return catNoDup.map(c => {
         return {
           name: c,
-          link: `/category#${c}`,
+          link: `/category.html#${c}`,
           title: `category_${c}`
         }
       })
