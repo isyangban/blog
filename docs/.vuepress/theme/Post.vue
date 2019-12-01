@@ -102,7 +102,7 @@ export default {
     },
 
     categoryLink() {
-      return `/category#${this.$frontmatter.category}`;
+      return `/category.html#${this.$frontmatter.category}`;
     },
 
     sameCategoryPosts() {
@@ -169,7 +169,7 @@ export default {
     },
 
     tagLink(tag) {
-      return `/tag#${tag}`;
+      return `/tag.html#${tag}`;
     }
   }
 };
