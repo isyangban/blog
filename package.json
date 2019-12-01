@@ -1,0 +1,29 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "Coearth's Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev --no-clear-screen docs",
+    "build": "vuepress build docs"
+  },
+  "author": "Jeong Woon Choi",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-last-updated": "^1.2.0",
+    "@vuepress/plugin-medium-zoom": "^1.2.0",
+    "@vuepress/plugin-nprogress": "^1.2.0",
+    "microns": "^1.0.4",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.0",
+    "postcss-import": "^12.0.1",
+    "sass-loader": "^8.0.0",
+    "typicons.font": "^2.0.9",
+    "vuepress": "^1.2.0",
+    "vuepress-plugin-clean-urls": "^1.1.0",
+    "vuepress-plugin-disqus": "^0.1.1",
+    "vuepress-plugin-reading-time": "^0.1.1"
+  },
+  "dependencies": {}
+}
