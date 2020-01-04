@@ -26,10 +26,6 @@ export default {
     }
   },
 
-  created() {
-    console.log("Post list Comp");
-  },
-
   methods: {
     isLatest(post) {
       const threeDaysBefore = moment().subtract(3, "days");
@@ -50,8 +46,10 @@ export default {
 
 <style lang="stylus" scoped>
 .blog-item
-  border-bottom: 1px solid grey
-  padding-bottom 0.2rem
+  // border-bottom: 1px solid $rozaliyaRedLight
+  padding-bottom 0.4rem
+  padding-top 0.4rem
+  display: flex
 
 .new-badge
   font-size: 1.3rem
@@ -59,10 +57,15 @@ export default {
 
 .post-link
   color: $foregroundColor
-  font-weight: bold
+  font-weight: 500
   font-size: 1.5rem
+  &:hover
+    color: $white
+    background-color: $rozaliyaRed
 
 .post-date
   font-size: 1.3rem
-  color: $liliyaBlueLight
+  margin-left: auto
+  color: #24292e
+//  color: $liliyaBlueLight
 </style>

@@ -1,5 +1,5 @@
 const path = require("path");
-console.log("dirname: ", __dirname)
+const domain = "kiana.moe"
 
 module.exports = {
   configureWebpack: {
@@ -31,18 +31,39 @@ module.exports = {
     '@vuepress/nprogress',
     '@vuepress/last-updated',
     'vuepress-plugin-reading-time',
-    'disqus',
-   /* [
-      '@vuepress/register-components',
+    [
+      'vuepress-plugin-seo',
       {
-        componentsDir: "components"
+        siteTitle: (_, $site) => $site.title,
+        title: $page => $page.title,
+        description: $page => $page.frontmatter.description || $page.frontmatter.title,
+        author: (_, $site) => "coearth",
+        tags: $page => $page.frontmatter.tags,
+        twitterCard: _ => 'summary_large_image',
+        type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
+        url: (_, $site, path) => (domain || '') + path,
+        image: ($page, $site) => {
+          // console.log("$page, ", $page),
+          // console.log("$site", $site)
+          // TODO: Get appropriate image
+          return null
+        },
+        publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
+        modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
       }
-    ],*/
+    ],
+    'disqus',
+    /* [
+       '@vuepress/register-components',
+       {
+         componentsDir: "components"
+       }
+     ],*/
   ],
   postcss: {
     plugins: [
       require('postcss-import'),
-      require("autoprefixer"),  
+      require("autoprefixer"),
     ]
   },
   /*configureWebpack: (config, isServer) => {
@@ -51,8 +72,10 @@ module.exports = {
   title: "코어스의 잡지식 리포지터리",
   description: "코어스의 잡지식 리포지터리",
   markdown: {
-    anchor: {
-      permalink: false
+    anchor: { 
+        permalink: true, 
+        permalinkBefore: true, 
+        permalinkSymbol: '#' 
     },
     linkify: true
   },

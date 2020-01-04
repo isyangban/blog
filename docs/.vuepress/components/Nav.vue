@@ -14,12 +14,18 @@
           >blog</a
         >
       </div>
-      <!--
       <div class="nav-right">
-        <a class="rss gray link" href="/feed.xml" title="coearth" >/rss</a>
+        <span class="link" @click="toggleSearch" v-show="!searchFocused">
+          search
+        </span>
+        <SearchBox
+          v-show="searchFocused"
+          @focus="searchFocused = true"
+          @blur="searchFocused = false"
+        />
       </div>
-      -->
     </nav>
+    <div></div>
   </header>
 </template>
 
@@ -29,6 +35,12 @@ export default {
   props: ["page"],
   created() {
     console.log("nav called");
+  },
+
+  data() {
+    return {
+      searchFocused: false
+    };
   },
 
   methods: {
@@ -41,6 +53,10 @@ export default {
       return {
         "active-link": this.page.path !== "/about/"
       };
+    },
+
+    toggleSearch() {
+      this.searchFocused = !this.searchFocused;
     }
   }
 };
@@ -62,9 +78,10 @@ export default {
     margin-bottom: 2rem
 
 .link
-  color: $foregroundColor
+  color: $rozaliyaRed
   padding: 0rem 0.5rem
 
 .active-link
   background-color: $rozaliyaRed
+  color: $white
 </style>

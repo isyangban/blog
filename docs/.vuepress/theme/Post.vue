@@ -183,21 +183,23 @@ export default {
     margin-bottom: 0
     font-weight: bold
     padding: 0rem 1rem 0.6rem 0rem
+    color: $white
   p
     margin-top: 1rem
   span.category
     color: $liliyaBlueLight
     &:hover
       color: $hoverColor
+  margin-bottom: 2rem
 
 .navigation
-  border-top: 1px solid grey
+  border-top: 1px solid $rozaliyaRedLight
   padding: 1rem 0rem
   display: flex
   justify-content: space-between
 
 .meta-detail
-  border-top: 1px solid grey
+  border-top: 1px solid $rozaliyaRedLight
   padding: 1rem 0rem
   p
     margin: 0
@@ -217,7 +219,7 @@ export default {
      &:hover
        color: $hoverColor
 .comments
-  border-top: 1px solid grey
+  border-top: 1px solid $rozaliyaRedLight
   h2
     font-size: 2.5rem
     margin: 1rem 0 0 0
