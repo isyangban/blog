@@ -1,0 +1,15 @@
+# Local Compose for checking if build works well
+version: "3.7"
+
+services:
+  blog:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blog.rule=Host(`kiana.moe`)"
+      - "traefik.http.routers.blog.tls=true"
+      - "traefik.http.routers.blog.tls.certresolver=letsencrypt"
+      - "traefik.http.services.blog.loadBalancer.server.port=80"
