@@ -10,7 +10,7 @@
         </a>
       </p>
     </div>
-    <section>
+    <section class="post">
       <Content />
     </section>
     <!-- Footer -->
@@ -191,6 +191,10 @@ export default {
     &:hover
       color: $hoverColor
   margin-bottom: 2rem
+
+.post
+  ::v-deep p
+    margin-bottom: 2rem
 
 .navigation
   border-top: 1px solid $rozaliyaRedLight
