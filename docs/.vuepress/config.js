@@ -53,6 +53,12 @@ module.exports = {
       }
     ],
     'disqus',
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-33867391-3' 
+      }
+    ]
     /* [
        '@vuepress/register-components',
        {
