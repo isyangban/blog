@@ -227,7 +227,6 @@ export default {
   h2
     font-size: 2.5rem
     margin: 1rem 0 0 0
-    font-style: italic
 
 .related-posts
   h2

@@ -5,30 +5,35 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vuepress dev --no-clear-screen docs",
-    "build": "vuepress build docs"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "start": "nodemon --ext md,vue,js --watch docs --watch . --exec vuepress dev docs"
   },
   "author": "Jeong Woon Choi",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@vuepress/plugin-google-analytics": "^1.4.1",
-    "@vuepress/plugin-last-updated": "^1.2.0",
-    "@vuepress/plugin-medium-zoom": "^1.2.0",
-    "@vuepress/plugin-nprogress": "^1.2.0",
-    "@vuepress/plugin-search": "^1.2.0",
-    "@vuepress/shared-utils": "^1.4.1",
-    "microns": "^1.0.4",
-    "moment": "^2.24.0",
+    "@babel/core": "^7.10.1",
+    "@vuepress/plugin-google-analytics": "^1.5.0",
+    "@vuepress/plugin-last-updated": "^1.5.0",
+    "@vuepress/plugin-medium-zoom": "^1.5.0",
+    "@vuepress/plugin-nprogress": "^1.5.0",
+    "@vuepress/plugin-search": "^1.5.0",
+    "@vuepress/shared-utils": "^1.5.0",
+    "exifr": "^5.0.2",
+    "fraction.js": "^4.0.12",
+    "microns": "^1.0.6",
+    "moment": "^2.26.0",
     "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
     "postcss-import": "^12.0.1",
-    "sass-loader": "^8.0.0",
+    "sass-loader": "^8.0.2",
     "typicons.font": "^2.0.9",
-    "vuepress": "^1.2.0",
-    "vuepress-plugin-clean-urls": "^1.1.0",
+    "vue-async-computed": "^3.8.2",
+    "vuepress": "^1.5.0",
+    "vuepress-plugin-clean-urls": "^1.1.1",
     "vuepress-plugin-disqus": "^0.1.1",
     "vuepress-plugin-reading-time": "^0.1.1",
-    "vuepress-plugin-seo": "^0.1.2"
-  },
-  "dependencies": {}
+    "vuepress-plugin-seo": "^0.1.3",
+    "watchpack": "1.6.1"
+  }
 }

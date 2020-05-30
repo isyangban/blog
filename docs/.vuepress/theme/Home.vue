@@ -79,7 +79,6 @@ export default {
 .title
   color: $rozaliyaRed
   font-size: 3rem
-  font-style: italic
   font-weight: bold
   margin: 0
 

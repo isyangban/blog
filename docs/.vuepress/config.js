@@ -79,8 +79,8 @@ module.exports = {
   description: "코어스의 잡지식 리포지터리",
   markdown: {
     anchor: { 
-        permalink: true, 
-        permalinkBefore: true, 
+        permalink: false, 
+        permalinkBefore: false, 
         permalinkSymbol: '#' 
     },
     linkify: true
