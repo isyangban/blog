@@ -1,5 +1,6 @@
-const path = require("path");
-const domain = "kiana.moe"
+const path = require("path")
+const querystring = require("querystring")
+const domain = "https://kiana.moe"
 
 module.exports = {
   configureWebpack: {
@@ -43,9 +44,13 @@ module.exports = {
         type: $page => ['articles', 'posts', 'blog'].some(folder => $page.regularPath.startsWith('/' + folder)) ? 'article' : 'website',
         url: (_, $site, path) => (domain || '') + path,
         image: ($page, $site) => {
-          // console.log("$page, ", $page),
-          // console.log("$site", $site)
-          // TODO: Get appropriate image
+          if ($page.frontmatter.cover) {
+            const paths = $page.frontmatter.cover.split("/")
+            const filename = paths[paths.length - 1]
+            return (domain || '') + 
+              paths.slice(0, paths.length - 1).join("/") + "/" + 
+              querystring.escape(filename)
+          } 
           return null
         },
         publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
