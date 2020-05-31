@@ -1,7 +1,7 @@
 <template>
   <figure :class="figure">
     <img :src="imagesrc" :alt="alt" class="medium-zoom-image large-image" ref="img" />
-    <figcaption>
+    <figcaption :class="figcaption">
       <p>
         <span class="caption">
         {{ caption }}
@@ -45,6 +45,10 @@ export default {
     large: {
       type: Boolean,
       default: false
+    },
+    vertical: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -60,7 +64,11 @@ export default {
       },
       exifValid: false,
       figure: {
-        large: this.large
+        large: this.large,
+        vertical: this.vertical
+      },
+      figcaption: {
+        vertical: this.vertical
       }
     }
   },
@@ -103,23 +111,23 @@ figure
   margin-left: 0
   margin-right: 0
 
-.large 
+figure.large 
   width: 100vw
   position: relative
   left: 50%
+  right: 50%
   margin-left: -50vw
-  margin-right: 0
+  margin-right: -50vw
 
+@media (min-width: 40rem)
+  figure.large.vertical
+    width: 100%
+    margin-left: 0
+    margin-right: 0
+    position: static
 
-//@media (max-width: 50rem) 
-//  .large 
-//    width: 100%
-//    margin-left: 0
-//    left: 0%
-
-  
 @media (min-width: 100rem) 
-  .large 
+  figure.large 
     width: 160rem
     left: 0%
     margin-left: calc((160rem - 78rem) * -0.5)
@@ -134,13 +142,24 @@ figure
   font-weight: 500
 
 figcaption
-    margin-top: 10px
-    margin-bottom: 20px
-    padding-left: 20px
-    padding-right: 20px
-    text-align: left;
-    font-size: 1.4rem
-    line-height: 2.0rem
-    color: #888;
+  margin-top: 10px
+  margin-bottom: 20px
+  padding-left: 30px
+  padding-right: 30px
+  text-align: left;
+  font-size: 1.4rem
+  line-height: 2.0rem
+  color: #888;
+
+figcaption.vertical
+  padding-left: 0
+  padding-right: 0
+
+// 모바일 환경에서 Width
+@media (max-width: 40rem)
+  figcaption.vertical
+    padding-left: 30px
+    padding-right: 30px
+
 
 </style>
