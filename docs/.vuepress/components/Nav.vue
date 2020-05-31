@@ -33,9 +33,6 @@
 export default {
   name: "Nav",
   props: ["page"],
-  created() {
-    console.log("nav called");
-  },
 
   data() {
     return {

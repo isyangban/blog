@@ -9,9 +9,13 @@
         <br>
         <span v-if="exifValid">
         {{ prettyMake }} {{ exif.Model }} | 
+        <template v-if=exif.FocalLength>
         {{ exif.FocalLength }}mm |
+        </template>
         {{ exposureTimeInFraction }}s | 
+        <template v-if=exif.FNumber>
         f/{{ exif.FNumber }} |
+        </template>
         ISO{{ exif.ISO }}
         </span>
       </p>
@@ -24,6 +28,7 @@ import exifr from "exifr"
 import Fraction from "fraction.js"
 
 export default {
+  name: "CapImage",
   props: {
     src: {
       type: String,
@@ -70,7 +75,6 @@ export default {
         return "0"
       }
       const frac = new Fraction(this.exif.ExposureTime)
-      console.log(frac.toFraction())
       return frac.toFraction()
     },
 

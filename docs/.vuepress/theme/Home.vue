@@ -31,9 +31,6 @@ import { sortDate } from "../lib/utility";
 // Define Common Layout for all pages
 export default {
   name: "Home",
-  created() {
-    console.log("Layout Theme Created");
-  },
 
   computed: {
     posts() {

@@ -19,11 +19,9 @@ import { sortDate } from "../lib/utility";
 export default {
   name: "Category",
   mounted() {
-    console.log("Category Theme Created", this.$route.hash);
     // If route.hash is none => route to home page
 
     if (!this.$route.hash) {
-      console.log("routing to home page");
       this.$router.push("/");
     }
   },

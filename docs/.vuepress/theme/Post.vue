@@ -84,10 +84,6 @@ import { sortDate } from "../lib/utility";
 // Define Common Layout for all pages
 export default {
   name: "Post",
-  created() {
-    console.log("Post Theme Created");
-  },
-
   computed: {
     formatedDate() {
       return moment(this.$page.frontmatter.date).format("YYYY-MM-DD");
@@ -195,6 +191,12 @@ export default {
 .post
   ::v-deep p
     margin-bottom: 2rem
+
+  ::v-deep blockquote *:last-child
+    margin-bottom: 0
+
+  line-height: 2
+  font-size: 1.6rem
 
 .navigation
   border-top: 1px solid $rozaliyaRedLight
