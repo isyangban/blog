@@ -1,4 +1,4 @@
-FROM node:13.13-alpine
+FROM node:14.17-alpine
 LABEL MAINTAINER Jeong Woon Choi (choijeongwoon@gmail.com)
 WORKDIR /build
 COPY . .
