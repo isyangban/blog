@@ -190,10 +190,13 @@ export default {
 
 .post
   ::v-deep p
-    margin-bottom: 2rem
+    margin-bottom: 1rem
 
   ::v-deep blockquote *:last-child
     margin-bottom: 0
+
+  ::v-deep pre 
+    margin-bottom: 1rem
 
   line-height: 2
   font-size: 1.6rem

@@ -11,14 +11,6 @@ module.exports = {
     }
   },
   plugins: [
-    /*[
-      'vuepress-plugin-clean-urls',
-      {
-        normalSuffix: '',
-        indexSuffix: '/',
-        notFoundPath: '/404.html',
-      },
-    ],*/
     [
       '@vuepress/medium-zoom',
       {
@@ -64,12 +56,6 @@ module.exports = {
         'ga': 'UA-33867391-3' 
       }
     ]
-    /* [
-       '@vuepress/register-components',
-       {
-         componentsDir: "components"
-       }
-     ],*/
   ],
   postcss: {
     plugins: [
@@ -77,9 +63,6 @@ module.exports = {
       require("autoprefixer"),
     ]
   },
-  /*configureWebpack: (config, isServer) => {
-    console.log("webpack config", config)
-  },*/
   title: "코어스의 잡지식 리포지터리",
   description: "코어스의 잡지식 리포지터리",
   markdown: {
