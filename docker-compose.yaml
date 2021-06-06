@@ -4,6 +4,11 @@ services:
   blog:
     build: .
     restart: unless-stopped
+    container_name: blog
+    logging:
+      driver: journald
+      options:
+        tag: "{{.Name}}"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.blog.rule=Host(`kiana.moe`)"
@@ -12,6 +17,7 @@ services:
       - "traefik.http.services.blog.loadBalancer.server.port=80"
     networks:
       - traefiknet
+
 
 networks:
   traefiknet:
